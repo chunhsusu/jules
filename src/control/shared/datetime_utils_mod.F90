@@ -70,9 +70,9 @@ IMPLICIT NONE
 
 INTEGER, INTENT(IN) :: year
 LOGICAL, INTENT(IN) :: l_360  ! T for 360-day calendar
-                              ! F for Gregorian
+                              ! F for Gregorian or 365-day calendar
 LOGICAL, INTENT(IN) :: l_leap  ! T for leap years
-                               ! F for no leap years
+                               ! F for no leap years or 365-day calendar
 
 
 ! Default number of days in year is (obviously) 365

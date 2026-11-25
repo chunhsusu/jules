@@ -21,9 +21,15 @@ LOGICAL ::                                                                     &
       ! Switch for setting a 360 day year
       ! This remains in this module for UM compatibility
       ! When running in the UM, this is set from the UM variable
-      ! lcal360
+      ! calendar_type by matching i360day or i365day
       ! When running standalone it is read in the JULES_TIME namelist
-
+LOGICAL ::                                                                    &
+  l_leap = .FALSE.
+      ! Switch for setting a leap year or not.
+      ! This remains in this module for UM compatibility
+      ! When running in the UM, this is set from the UM variable
+      ! calendar_type by matching i360day or i365day
+      ! When running standalone it is read in the JULES_TIME namelist
 
 #if !defined(UM_JULES)
 !-----------------------------------------------------------------------

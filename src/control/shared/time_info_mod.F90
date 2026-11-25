@@ -10,7 +10,7 @@ MODULE time_info_mod
 ! and standalone
 ! We unify them and expose them as a variable in this module
 #if defined(UM_JULES)
-USE nlstcall_mod, ONLY: l_360 => lcal360
+USE switches, ONLY: l_360, l_leap
 #else
 USE datetime_mod, ONLY: l_360, l_leap, l_local_solar_time
 #endif
@@ -31,8 +31,6 @@ IMPLICIT NONE
 !-----------------------------------------------------------------------------
 
 #if defined(UM_JULES)
-LOGICAL :: l_leap = .TRUE.
-  ! In the UM, we always have leap years with 365 day calendar
 LOGICAL :: l_local_solar_time = .FALSE.
   ! In the UM, time is always UTC.
 #endif
